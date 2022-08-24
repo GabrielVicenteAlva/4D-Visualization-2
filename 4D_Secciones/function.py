@@ -1,15 +1,16 @@
-# Pinhole
+# Sections
 import numpy as np
 import cmath
 
 def f(x):
-	return x[0]**2 + x[1]**2, x[0]**2 + x[1]**2
-	
 	c = x[0] +1j*x[1]
-	sq = c**2
+# 	if c == 0+0j:
+# 		return 0.,0.
+	sq = .5*c**2
 	return sq.real,sq.imag
 
-ar = [-1.5,-1.,-.5,.00001,.5,1.,1.5]
+ar = [-1.,-.75,-.5,-.25,.0,.25,.5,.75,1.]
+ar = np.arange(-1,1,.05)
 
 X = np.array([
 	[(i,j) for i in ar] for j in ar
@@ -32,4 +33,9 @@ for a in range(N):
 		print(t(a,b),t(a,b+1))
 		print(t(b,a),t(b+1,a))
 
-print(0)
+print((N-1)**2)
+for a in range(N-1):
+	for b in range(N-1):
+		print(t(a,b),t(a,b+1),t(a+1,b+1),t(a+1,b),-1)
+# 		print(t(a+1,b+1),t(a,b+1),t(a+1,b),-1)
+# print(0)

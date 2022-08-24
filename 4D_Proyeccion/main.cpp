@@ -169,7 +169,7 @@ void display() {
 	*/
 	// Axes
 	while(1) {
-	break;
+break;
 	Vec3D offset(-.5,-.5,-.5,-.5); 
 	float l = .5;
 	Vec3D O = camera.apply(offset);
